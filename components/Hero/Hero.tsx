@@ -10,7 +10,8 @@ export default function Hero() {
       <div className={styles.inner}>
         <h1 className={styles.tagline} data-animate data-animate-delay="1">
           Los profesionales que usan IA de forma adecuada trabajan menos y
-          deciden mejor. Los que no, ya están quedando atrás.{" "}
+          deciden mejor. Los que no, ya están quedando atrás.
+          <br />
           <span className={styles.taglineAccent}>
             ¿De qué lado querés estar?
           </span>
