@@ -1,0 +1,119 @@
+.section {
+  padding: 7rem 1.5rem;
+  background: linear-gradient(160deg, #1a0a2e 0%, #111111 100%);
+}
+
+.inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-press-start), monospace;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.formWrap {
+  width: 100%;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray);
+  letter-spacing: 0.04em;
+}
+
+.input,
+.textarea {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 0.85rem 1rem;
+  color: var(--color-text);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(209, 209, 209, 0.35);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: rgba(57, 255, 20, 0.45);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.12);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.btn {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--color-neon);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.45);
+  transform: translateY(-1px);
+}
+
+.successMsg {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-neon);
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  border-radius: 6px;
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.3);
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
