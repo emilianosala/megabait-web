@@ -16,7 +16,7 @@
 
 .title {
   font-family: var(--font-press-start), monospace;
-  font-size: clamp(0.75rem, 1.8vw, 2rem);
+  font-size: clamp(0.75rem, 1.8vw, 1.5rem);
   color: var(--color-text);
   line-height: 1.8;
   margin-bottom: 16px;

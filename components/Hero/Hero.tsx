@@ -3,7 +3,6 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section id="inicio" className={styles.hero}>
-      {/* Pixel art decorative background */}
       <div className={styles.pixelGrid} aria-hidden="true" />
       <div className={styles.scanlines} aria-hidden="true" />
 
@@ -11,7 +10,6 @@ export default function Hero() {
         <h1 className={styles.tagline} data-animate data-animate-delay="1">
           Los profesionales que usan IA de forma adecuada trabajan menos y
           deciden mejor. Los que no, ya están quedando atrás.
-          <br />
           <span className={styles.taglineAccent}>
             ¿De qué lado querés estar?
           </span>

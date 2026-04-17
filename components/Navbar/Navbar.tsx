@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -20,14 +19,9 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.inner}>
         <a href="#inicio" className={styles.logo} onClick={closeMenu}>
-          <Image
-            src="/images/logo_navbar.png"
-            alt="Megabait"
-            height={40}
-            width={160}
-            style={{ height: "40px", width: "auto" }}
-            priority
-          />
+          <span className={styles.logoText}>
+            MEGA B<span className={styles.logoAi}>AI</span>T
+          </span>
         </a>
 
         <div className={`${styles.navLinks} ${menuOpen ? styles.navOpen : ""}`}>

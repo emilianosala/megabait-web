@@ -4,8 +4,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
-  padding-top: 64px; /* navbar height */
+  padding-top: 64px;
 }
 
 /* Dot grid decorative background */
@@ -40,41 +41,46 @@
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
   width: 100%;
+  max-width: 800px;
   margin: 0 auto;
   padding: 120px 1.5rem 80px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 2rem;
 }
 
 .tagline {
-  font-family: var(--font-press-start), monospace;
-  font-size: clamp(0.7rem, 1.2vw, 1.4rem);
-  color: var(--color-text);
-  line-height: 2.4;
-  letter-spacing: 0.02em;
-  text-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
 }
 
 .taglineAccent {
+  display: block;
   color: var(--color-neon);
-  text-shadow: 0 0 24px rgba(57, 255, 20, 0.7);
+  text-shadow: 0 0 24px rgba(57, 255, 20, 0.6);
+  margin-top: 0.2em;
 }
 
 .subtitle {
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   color: var(--color-gray);
-  max-width: 600px;
+  max-width: 560px;
   line-height: 1.8;
 }
 
 .ctas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
   margin-top: 0.5rem;
 }
 
@@ -119,11 +125,6 @@
 }
 
 @media (max-width: 768px) {
-  .tagline {
-    font-size: clamp(0.6rem, 2.8vw, 1rem);
-    line-height: 2.5;
-  }
-
   .inner {
     padding: 100px 1.25rem 60px;
   }
@@ -132,6 +133,7 @@
 @media (max-width: 480px) {
   .ctas {
     flex-direction: column;
+    width: 100%;
   }
 
   .btnPrimary,

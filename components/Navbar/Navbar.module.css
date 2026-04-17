@@ -32,6 +32,17 @@
   flex-shrink: 0;
 }
 
+.logoText {
+  font-family: var(--font-press-start), monospace;
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.logoAi {
+  color: var(--color-neon);
+}
+
 .navLinks {
   display: flex;
   align-items: center;
