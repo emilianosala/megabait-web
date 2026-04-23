@@ -64,6 +64,23 @@
   color: rgba(209, 209, 209, 0.5);
 }
 
+.legalLinks {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.legalLink {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.82rem;
+  color: rgba(209, 209, 209, 0.5);
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--color-neon);
+}
+
 .tagline {
   font-family: var(--font-inter), sans-serif;
   font-size: 0.82rem;

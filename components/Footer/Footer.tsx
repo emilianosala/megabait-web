@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -30,6 +31,14 @@ export default function Footer() {
           <p className={styles.copy}>
             © 2026 Megabait. Todos los derechos reservados.
           </p>
+          <nav className={styles.legalLinks}>
+            <Link href="/privacy" className={styles.legalLink}>
+              Privacidad
+            </Link>
+            <Link href="/terms" className={styles.legalLink}>
+              Términos
+            </Link>
+          </nav>
           <p className={styles.tagline}>Hecho con IA. Pensado para humanos.</p>
         </div>
       </div>

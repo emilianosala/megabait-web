@@ -1,0 +1,96 @@
+.page {
+  min-height: 100vh;
+  background-color: #111111;
+  padding: 120px 1.5rem 80px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.updated {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.875rem;
+  color: rgba(209, 209, 209, 0.5);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #222;
+}
+
+/* Headings */
+.container :global(h2) {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.container :global(h3) {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d1d1d1;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Body text */
+.container :global(p) {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.975rem;
+  color: #d1d1d1;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Lists */
+.container :global(ul),
+.container :global(ol) {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.975rem;
+  color: #d1d1d1;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.container :global(li) {
+  margin-bottom: 0.4rem;
+}
+
+/* Links */
+.container :global(a) {
+  color: #39ff14;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.container :global(a:hover) {
+  opacity: 0.8;
+}
+
+/* Strong */
+.container :global(strong) {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 100px 1.25rem 60px;
+  }
+}
