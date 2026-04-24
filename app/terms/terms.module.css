@@ -30,7 +30,7 @@
 /* Headings */
 .container :global(h2) {
   font-family: var(--font-inter), sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #ffffff;
   margin-top: 2.5rem;
@@ -40,17 +40,17 @@
 
 .container :global(h3) {
   font-family: var(--font-inter), sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #d1d1d1;
-  margin-top: 1.75rem;
-  margin-bottom: 0.5rem;
+  color: #39ff14;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
 }
 
 /* Body text */
 .container :global(p) {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.975rem;
+  font-size: 0.95rem;
   color: #d1d1d1;
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -60,7 +60,7 @@
 .container :global(ul),
 .container :global(ol) {
   font-family: var(--font-inter), sans-serif;
-  font-size: 0.975rem;
+  font-size: 0.95rem;
   color: #d1d1d1;
   line-height: 1.8;
   margin-bottom: 1rem;
@@ -68,7 +68,7 @@
 }
 
 .container :global(li) {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 /* Links */
@@ -80,7 +80,7 @@
 }
 
 .container :global(a:hover) {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 /* Strong */
