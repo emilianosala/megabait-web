@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 600px; /* safety floor on very small screens */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -78,13 +79,13 @@
 }
 
 .bracketBL {
-  bottom: 110px; /* above bottom gradient */
+  bottom: 24px;
   left: clamp(1rem, 3vw, 3rem);
   border-width: 0 0 2px 2px;
 }
 
 .bracketBR {
-  bottom: 110px;
+  bottom: 24px;
   right: clamp(1rem, 3vw, 3rem);
   border-width: 0 2px 2px 0;
 }
