@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 import styles from "./Contacto.module.css";
+import { Send } from "@/components/Icons";
 
 export default function Contacto() {
-  const [fields, setFields] = useState({ nombre: "", email: "", mensaje: "" });
+  const [fields, setFields] = useState({
+    nombre: "",
+    email: "",
+    telefono: "",
+    mensaje: "",
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
@@ -17,24 +23,31 @@ export default function Contacto() {
     if (!fields.nombre.trim() || !fields.email.trim() || !fields.mensaje.trim())
       return;
     setSubmitted(true);
-    setFields({ nombre: "", email: "", mensaje: "" });
+    setFields({ nombre: "", email: "", telefono: "", mensaje: "" });
   };
 
   return (
     <section id="contacto" className={styles.section}>
+      {/* Top gradient transition from Waitlist */}
+      <div className={styles.gradientTop} aria-hidden="true" />
+
       <div className={styles.inner}>
-        <h2 className={styles.title} data-animate>
+        <p className={styles.prefix} data-animate>
+          // CONTACTO
+        </p>
+        <h2 className={styles.title} data-animate data-animate-delay="1">
           ¿Hablamos?
         </h2>
 
-        <div className={styles.formWrap} data-animate data-animate-delay="1">
+        <div className={styles.formWrap} data-animate data-animate-delay="2">
           {submitted ? (
             <p className={styles.successMsg}>
               ¡Mensaje recibido! Te respondemos pronto.
             </p>
           ) : (
             <div className={styles.fields}>
-              <div className={styles.row}>
+              {/* 3-column row: nombre / email / telefono */}
+              <div className={styles.row3}>
                 <div className={styles.fieldGroup}>
                   <label className={styles.label} htmlFor="nombre">
                     Nombre
@@ -63,6 +76,20 @@ export default function Contacto() {
                     onChange={handleChange}
                   />
                 </div>
+                <div className={styles.fieldGroup}>
+                  <label className={styles.label} htmlFor="telefono">
+                    Teléfono <span className={styles.optional}>(opcional)</span>
+                  </label>
+                  <input
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    className={styles.input}
+                    placeholder="+54 9 341..."
+                    value={fields.telefono}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
 
               <div className={styles.fieldGroup}>
@@ -85,12 +112,16 @@ export default function Contacto() {
                 className={styles.btn}
                 onClick={handleSubmit}
               >
-                Enviar mensaje
+                <Send size={16} className={styles.btnIcon} />
+                [ ENVIAR ]
               </button>
             </div>
           )}
         </div>
       </div>
+
+      {/* Bottom gradient transition into Footer */}
+      <div className={styles.gradientBottom} aria-hidden="true" />
     </section>
   );
 }

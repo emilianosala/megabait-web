@@ -7,6 +7,7 @@
   align-items: center;
   overflow: hidden;
   padding-top: 64px;
+  background-color: #111111;
 }
 
 /* Dot grid decorative background */
@@ -15,7 +16,7 @@
   inset: 0;
   background-image: radial-gradient(
     circle,
-    rgba(57, 255, 20, 0.08) 1px,
+    rgba(57, 255, 20, 0.07) 1px,
     transparent 1px
   );
   background-size: 40px 40px;
@@ -31,8 +32,8 @@
     to bottom,
     transparent,
     transparent 3px,
-    rgba(0, 0, 0, 0.06) 3px,
-    rgba(0, 0, 0, 0.06) 4px
+    rgba(0, 0, 0, 0.05) 3px,
+    rgba(0, 0, 0, 0.05) 4px
   );
   pointer-events: none;
   z-index: 0;
@@ -42,9 +43,9 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
-  padding: 120px 1.5rem 80px;
+  padding: 120px 2.5rem 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,30 +53,90 @@
   gap: 2rem;
 }
 
+/* ── Corner bracket decorations ── */
+.bracket {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: rgba(57, 255, 20, 0.35);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.bracketTL {
+  top: 12px;
+  left: 12px;
+  border-width: 2px 0 0 2px;
+}
+
+.bracketTR {
+  top: 12px;
+  right: 12px;
+  border-width: 2px 2px 0 0;
+}
+
+.bracketBL {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 2px 2px;
+}
+
+.bracketBR {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #39ff14;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #39ff14;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.8);
+  flex-shrink: 0;
+}
+
+/* ── Tagline ── */
 .tagline {
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 800;
   color: #ffffff;
-  line-height: 1.2;
-  text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+  line-height: 1.22;
+  text-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
 }
 
 .taglineAccent {
   display: block;
-  color: var(--color-neon);
-  text-shadow: 0 0 24px rgba(57, 255, 20, 0.6);
-  margin-top: 0.2em;
+  margin-top: 0.25em;
 }
 
 .subtitle {
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: var(--color-gray);
+  color: #d1d1d1;
   max-width: 560px;
   line-height: 1.8;
 }
 
+/* ── CTAs ── */
 .ctas {
   display: flex;
   flex-direction: row;
@@ -85,48 +146,64 @@
 }
 
 .btnPrimary {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  background-color: var(--color-neon);
+  font-family: var(--font-press-start), monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  background-color: #39ff14;
   color: #000;
-  padding: 14px 32px;
-  border-radius: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-block;
+  line-height: 1.6;
 }
 
 .btnPrimary:hover {
   background-color: #2dd10f;
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.45);
   transform: translateY(-2px);
 }
 
 .btnSecondary {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-press-start), monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   background-color: transparent;
-  color: var(--color-neon);
-  padding: 14px 32px;
-  border-radius: 8px;
-  border: 2px solid var(--color-neon);
+  color: #39ff14;
+  padding: 14px 28px;
+  border-radius: 6px;
+  border: 2px solid #39ff14;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-block;
+  line-height: 1.6;
 }
 
 .btnSecondary:hover {
   background-color: rgba(57, 255, 20, 0.08);
-  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+  box-shadow: 0 0 22px rgba(57, 255, 20, 0.2);
   transform: translateY(-2px);
+}
+
+/* ── Bottom gradient transition ── */
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #0e0a1e);
+  pointer-events: none;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
   .inner {
-    padding: 100px 1.25rem 60px;
+    padding: 100px 1.5rem 70px;
   }
 }
 
@@ -140,5 +217,6 @@
   .btnSecondary {
     text-align: center;
     width: 100%;
+    font-size: 0.6rem;
   }
 }

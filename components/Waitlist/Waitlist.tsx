@@ -15,19 +15,24 @@ export default function Waitlist() {
 
   return (
     <section id="waitlist" className={styles.section}>
+      {/* Top gradient transition from Productos */}
+      <div className={styles.gradientTop} aria-hidden="true" />
+
       <div className={styles.inner}>
-        <h2 className={styles.title} data-animate>
+        <p className={styles.prefix} data-animate>
+          // ACCESO_ANTICIPADO
+        </p>
+        <h2 className={styles.title} data-animate data-animate-delay="1">
           Sé parte del acceso anticipado
         </h2>
-        <p className={styles.subtitle} data-animate data-animate-delay="1">
-          Estamos en beta privada. Dejá tu mail y te avisamos cuando haya lugar.
+        <p className={styles.subtitle} data-animate data-animate-delay="2">
+          Las plazas son limitadas y se asignan por invitación. Dejá tu mail y
+          te avisamos cuando haya lugar.
         </p>
 
-        <div className={styles.formWrap} data-animate data-animate-delay="2">
+        <div className={styles.formWrap} data-animate data-animate-delay="3">
           {submitted ? (
-            <p className={styles.successMsg}>
-              ¡Listo! Te avisamos pronto. 🚀
-            </p>
+            <p className={styles.successMsg}>¡Listo! Te avisamos pronto. 🚀</p>
           ) : (
             <div className={styles.inputRow}>
               <input
@@ -44,12 +49,15 @@ export default function Waitlist() {
                 className={styles.btn}
                 onClick={handleSubmit}
               >
-                Quiero acceso
+                [ ACCESO ANTICIPADO ]
               </button>
             </div>
           )}
         </div>
       </div>
+
+      {/* Bottom gradient transition into Contacto */}
+      <div className={styles.gradientBottom} aria-hidden="true" />
     </section>
   );
 }

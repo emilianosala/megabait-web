@@ -32,7 +32,7 @@ export default function Navbar() {
             Contacto
           </a>
           <a href="#waitlist" className={styles.ctaBtn} onClick={closeMenu}>
-            Quiero acceso
+            [ QUIERO ACCESO ]
           </a>
         </div>
 
