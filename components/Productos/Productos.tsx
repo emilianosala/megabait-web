@@ -9,6 +9,7 @@ const products = [
       "Desarrollamos tu sitio web con inteligencia artificial integrada. Desde chatbots que atienden a tus clientes hasta automatizaciones que trabajan mientras dormís.",
     badge: "DISPONIBLE",
     badgeType: "available",
+    featured: false,
   },
   {
     Icon: BarChart3,
@@ -17,6 +18,7 @@ const products = [
       "Tu copiloto de campañas publicitarias. Analiza performance, detecta oportunidades y ofrece recomendaciones accionables — todo en lenguaje natural. Próximamente podrá ejecutar cambios en tus campañas con tu autorización.",
     badge: "EN DESARROLLO",
     badgeType: "dev",
+    featured: true,
   },
   {
     Icon: FileText,
@@ -25,6 +27,7 @@ const products = [
       "Monitoreo automático de novedades de AFIP. Detecta cada cambio y te indica exactamente a cuáles de tus clientes aplica — para que nunca te tome por sorpresa.",
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
+    featured: false,
   },
   {
     Icon: Mic2,
@@ -33,6 +36,7 @@ const products = [
       "Un agente que responde por WhatsApp en tu nombre, respetando el historial y el tono de cada conversación con tus clientes. Disponible como módulo integrado a otros agentes o como producto independiente.",
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
+    featured: false,
   },
 ];
 
@@ -55,7 +59,7 @@ export default function Productos() {
           {products.map((product, i) => (
             <div
               key={product.name}
-              className={styles.card}
+              className={`${styles.card} ${product.featured ? styles.cardFeatured : ""}`}
               data-animate
               data-animate-delay={String(i + 1)}
             >
@@ -66,6 +70,11 @@ export default function Productos() {
                 <product.Icon size={22} className={styles.cardIconSvg} />
               </div>
 
+              {/* Featured label */}
+              {product.featured && (
+                <p className={styles.destacadoLabel}>★ Destacado</p>
+              )}
+
               <div
                 className={`${styles.badge} ${styles[`badge_${product.badgeType}`]}`}
               >
@@ -74,6 +83,13 @@ export default function Productos() {
 
               <h3 className={styles.cardName}>{product.name}</h3>
               <p className={styles.cardDesc}>{product.description}</p>
+
+              {/* CTA only on featured card */}
+              {product.featured && (
+                <a href="#waitlist" className={styles.cardCta}>
+                  [ QUIERO ACCESO ]
+                </a>
+              )}
             </div>
           ))}
         </div>
