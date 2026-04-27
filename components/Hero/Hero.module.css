@@ -45,45 +45,47 @@
   width: 100%;
   max-width: 980px;
   margin: 0 auto;
-  padding: 120px 2.5rem 80px;
+  padding: 80px 2.5rem 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 /* ── Corner bracket decorations ── */
+/* Positioned on .hero (full-width) so they sit at the viewport edges */
 .bracket {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border-color: rgba(57, 255, 20, 0.35);
+  width: 24px;
+  height: 24px;
+  border-color: rgba(57, 255, 20, 0.4);
   border-style: solid;
   pointer-events: none;
+  z-index: 1;
 }
 
 .bracketTL {
-  top: 12px;
-  left: 12px;
+  top: 88px; /* just below navbar */
+  left: clamp(1rem, 3vw, 3rem);
   border-width: 2px 0 0 2px;
 }
 
 .bracketTR {
-  top: 12px;
-  right: 12px;
+  top: 88px;
+  right: clamp(1rem, 3vw, 3rem);
   border-width: 2px 2px 0 0;
 }
 
 .bracketBL {
-  bottom: 12px;
-  left: 12px;
+  bottom: 110px; /* above bottom gradient */
+  left: clamp(1rem, 3vw, 3rem);
   border-width: 0 0 2px 2px;
 }
 
 .bracketBR {
-  bottom: 12px;
-  right: 12px;
+  bottom: 110px;
+  right: clamp(1rem, 3vw, 3rem);
   border-width: 0 2px 2px 0;
 }
 
@@ -116,7 +118,7 @@
 /* ── Tagline ── */
 .tagline {
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 800;
   color: #ffffff;
   line-height: 1.22;
@@ -203,7 +205,7 @@
 
 @media (max-width: 768px) {
   .inner {
-    padding: 100px 1.5rem 70px;
+    padding: 72px 1.5rem 60px;
   }
 }
 

@@ -12,25 +12,25 @@ export default function Hero() {
       <div className={styles.pixelGrid} aria-hidden="true" />
       <div className={styles.scanlines} aria-hidden="true" />
 
-      <div className={styles.inner}>
-        {/* Corner bracket decorations */}
-        <span
-          className={`${styles.bracket} ${styles.bracketTL}`}
-          aria-hidden="true"
-        />
-        <span
-          className={`${styles.bracket} ${styles.bracketTR}`}
-          aria-hidden="true"
-        />
-        <span
-          className={`${styles.bracket} ${styles.bracketBL}`}
-          aria-hidden="true"
-        />
-        <span
-          className={`${styles.bracket} ${styles.bracketBR}`}
-          aria-hidden="true"
-        />
+      {/* Corner bracket decorations — on the section so they reach the viewport edges */}
+      <span
+        className={`${styles.bracket} ${styles.bracketTL}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`${styles.bracket} ${styles.bracketTR}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`${styles.bracket} ${styles.bracketBL}`}
+        aria-hidden="true"
+      />
+      <span
+        className={`${styles.bracket} ${styles.bracketBR}`}
+        aria-hidden="true"
+      />
 
+      <div className={styles.inner}>
         {/* Badge */}
         <div className={styles.badge} data-animate>
           <span className={styles.badgeDot} aria-hidden="true" />
