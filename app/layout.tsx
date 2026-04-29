@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import AnimationObserver from "@/components/AnimationObserver/AnimationObserver";
+import SplashScreen from "@/components/SplashScreen/SplashScreen";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
       className={`${inter.variable} ${pressStart2P.variable}`}
     >
       <body>
+        <SplashScreen />
         <AnimationObserver />
         {children}
       </body>
