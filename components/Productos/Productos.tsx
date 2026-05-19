@@ -1,7 +1,16 @@
+import React from "react";
 import styles from "./Productos.module.css";
 import { Globe, BarChart3, FileText, Mic2 } from "@/components/Icons";
 
-const products = [
+const products: {
+  Icon: React.ComponentType<{ size?: number; className?: string }>;
+  name: string;
+  description: string;
+  badge: string;
+  badgeType: string;
+  featured: boolean;
+  cta: { text: string; href: string; variant: 'primary' | 'secondary' } | null;
+}[] = [
   {
     Icon: Globe,
     name: "Sitios Web con IA",
@@ -10,6 +19,7 @@ const products = [
     badge: "DISPONIBLE",
     badgeType: "available",
     featured: false,
+    cta: { text: "[ CONSULTAR ]", href: "#contacto", variant: "secondary" },
   },
   {
     Icon: BarChart3,
@@ -19,6 +29,7 @@ const products = [
     badge: "EN DESARROLLO",
     badgeType: "dev",
     featured: true,
+    cta: { text: "[ VER MÁS ]", href: "/agente-ads", variant: "primary" },
   },
   {
     Icon: FileText,
@@ -28,6 +39,7 @@ const products = [
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
     featured: false,
+    cta: null,
   },
   {
     Icon: Mic2,
@@ -37,6 +49,7 @@ const products = [
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
     featured: false,
+    cta: null,
   },
 ];
 
@@ -53,6 +66,11 @@ export default function Productos() {
         <p className={styles.subtitle} data-animate data-animate-delay="2">
           Herramientas de IA diseñadas para profesionales que quieren hacer más
           con menos esfuerzo.
+        </p>
+
+        <p className={styles.positioningPhrase} data-animate data-animate-delay="3">
+          La IA ya está trabajando para tus competidores.
+          Nosotros la ponemos a trabajar para vos.
         </p>
 
         <div className={styles.grid}>
@@ -84,10 +102,12 @@ export default function Productos() {
               <h3 className={styles.cardName}>{product.name}</h3>
               <p className={styles.cardDesc}>{product.description}</p>
 
-              {/* CTA only on featured card */}
-              {product.featured && (
-                <a href="#waitlist" className={styles.cardCta}>
-                  [ QUIERO ACCESO ]
+              {product.cta && (
+                <a
+                  href={product.cta.href}
+                  className={product.cta.variant === "primary" ? styles.cardCta : styles.cardCtaSecondary}
+                >
+                  {product.cta.text}
                 </a>
               )}
             </div>

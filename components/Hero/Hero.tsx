@@ -34,29 +34,23 @@ export default function Hero() {
         {/* Badge */}
         <div className={styles.badge} data-animate>
           <span className={styles.badgeDot} aria-hidden="true" />
-          Plazas limitadas — acceso por invitación
+          Hecho en Rosario. Pensado para LATAM.
         </div>
 
         {/* Main tagline */}
         <h1 className={styles.tagline} data-animate data-animate-delay="1">
-          Los profesionales que usan IA de forma adecuada trabajan menos y
-          deciden mejor. Los que no, ya están quedando atrás.
+          La IA no reemplaza profesionales. Reemplaza el trabajo que no querías hacer.
           <span className={styles.taglineAccent}>
-            <TypingText text="¿De qué lado querés estar?" speed={55} startDelay={800} />
+            <TypingText text="Recuperá tu tiempo para lo que importa." speed={55} startDelay={800} />
           </span>
         </h1>
 
-        <p className={styles.subtitle} data-animate data-animate-delay="2">
-          Tu tiempo vale demasiado para gastarlo en tareas que la IA puede hacer
-          mejor. Nosotros te ayudamos a dar ese salto.
-        </p>
-
-        <div className={styles.ctas} data-animate data-animate-delay="3">
+        <div className={styles.ctas} data-animate data-animate-delay="2">
           <a href="#productos" className={styles.btnPrimary}>
             [ VER PRODUCTOS ]
           </a>
-          <a href="#waitlist" className={styles.btnSecondary}>
-            [ ACCESO ANTICIPADO ]
+          <a href="#contacto" className={styles.btnSecondary}>
+            [ HABLAR CON EL EQUIPO ]
           </a>
         </div>
       </div>

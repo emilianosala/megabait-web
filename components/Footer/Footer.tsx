@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import LogoGlow from "../LogoGlow/LogoGlow";
 
 export default function Footer() {
   return (
@@ -8,13 +8,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.top}>
           <a href="#inicio" className={styles.logoWrap}>
-            <Image
-              src="/images/logo_navbar.png"
-              alt="Megabait"
-              height={28}
-              width={112}
-              style={{ height: "28px", width: "auto" }}
-            />
+            <LogoGlow variant="footer" />
           </a>
 
           <nav className={styles.links}>
@@ -39,7 +33,7 @@ export default function Footer() {
               Términos
             </Link>
           </nav>
-          <p className={styles.tagline}>Hecho con IA. Pensado para humanos.</p>
+          <p className={styles.tagline}>Tu tiempo vale demasiado. Dejanos que te devolvamos un poco.</p>
         </div>
       </div>
     </footer>

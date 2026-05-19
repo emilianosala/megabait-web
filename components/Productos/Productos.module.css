@@ -41,6 +41,29 @@
   text-align: center;
 }
 
+/* ── Positioning phrase ── */
+.positioningPhrase {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-style: italic;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.positioningPhrase::before {
+  content: '"';
+  color: #39ff14;
+}
+
+.positioningPhrase::after {
+  content: '"';
+  color: #39ff14;
+}
+
 /* ── Grid ── */
 .grid {
   display: grid;
@@ -244,12 +267,38 @@
   transform: translateY(-2px);
 }
 
+.cardCtaSecondary {
+  display: inline-block;
+  margin-top: auto;
+  font-family: var(--font-press-start), monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.04em;
+  color: #39ff14;
+  background-color: transparent;
+  border: 1px solid rgba(57, 255, 20, 0.5);
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  line-height: 1.6;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.cardCtaSecondary:hover {
+  border-color: #39ff14;
+  box-shadow: 0 0 14px rgba(57, 255, 20, 0.2);
+  transform: translateY(-2px);
+}
+
 @media (max-width: 680px) {
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .cardCta {
+  .cardCta,
+  .cardCtaSecondary {
     align-self: stretch;
     text-align: center;
   }
