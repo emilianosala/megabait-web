@@ -39,9 +39,9 @@ export default function Hero() {
 
         {/* Main tagline */}
         <h1 className={styles.tagline} data-animate data-animate-delay="1">
-          La IA no reemplaza profesionales. Reemplaza el trabajo que no querías hacer.
+          Diseñamos aplicaciones de IA para quienes no tienen tiempo que perder.
           <span className={styles.taglineAccent}>
-            <TypingText text="Recuperá tu tiempo para lo que importa." speed={55} startDelay={800} />
+            <TypingText text="Bienvenido." speed={80} startDelay={800} />
           </span>
         </h1>
 

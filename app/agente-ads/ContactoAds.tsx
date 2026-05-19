@@ -30,7 +30,7 @@ export default function ContactoAds() {
       <div className={styles.inner}>
         <p className={styles.prefix} data-animate>// CONTACTO</p>
         <h2 className={styles.sectionTitle} data-animate data-animate-delay="1">
-          ¿Hablamos?
+          Dejanos tu mensaje.
         </h2>
         <p className={styles.contactoIntro} data-animate data-animate-delay="2">
           Contanos sobre tu agencia o negocio y te mostramos cómo Megabait Ads

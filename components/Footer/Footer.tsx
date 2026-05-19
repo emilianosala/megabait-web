@@ -33,7 +33,7 @@ export default function Footer() {
               Términos
             </Link>
           </nav>
-          <p className={styles.tagline}>Tu tiempo vale demasiado. Dejanos que te devolvamos un poco.</p>
+          <p className={styles.tagline}>IA aplicada. Resultados reales.</p>
         </div>
       </div>
     </footer>

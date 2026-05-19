@@ -64,13 +64,12 @@ export default function Productos() {
           [ SOLUCIONES DE IA ]
         </h2>
         <p className={styles.subtitle} data-animate data-animate-delay="2">
-          Herramientas de IA diseñadas para profesionales que quieren hacer más
+          Herramientas de IA diseñadas para quienes quieren hacer más
           con menos esfuerzo.
         </p>
 
         <p className={styles.positioningPhrase} data-animate data-animate-delay="3">
-          La IA ya está trabajando para tus competidores.
-          Nosotros la ponemos a trabajar para vos.
+          Usar inteligencia artificial ya es un requisito esencial, no una ventaja.
         </p>
 
         <div className={styles.grid}>

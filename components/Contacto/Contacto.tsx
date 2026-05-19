@@ -36,7 +36,7 @@ export default function Contacto() {
           // CONTACTO
         </p>
         <h2 className={styles.title} data-animate data-animate-delay="1">
-          ¿Hablamos?
+          Dejanos tu mensaje.
         </h2>
 
         <div className={styles.formWrap} data-animate data-animate-delay="2">
