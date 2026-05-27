@@ -36,7 +36,7 @@
   font-size: 1.05rem;
   color: #d1d1d1;
   max-width: 580px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 1.25rem;
   line-height: 1.75;
   text-align: center;
 }
@@ -110,6 +110,30 @@
   border-color: rgba(57, 255, 20, 0.6);
   box-shadow: 0 0 28px rgba(57, 255, 20, 0.12);
   transform: translateY(-5px);
+}
+
+/* ── Type tag (SaaS / A medida) ── */
+.typeTag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--font-press-start), monospace;
+  font-size: 0.42rem;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.typeTag_saas {
+  color: rgba(57, 255, 20, 0.75);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  background: rgba(57, 255, 20, 0.05);
+}
+
+.typeTag_medida {
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 /* Top-left corner bracket accent */
@@ -198,6 +222,7 @@
   color: #d1d1d1;
   line-height: 1.75;
   flex: 1;
+  text-align: justify;
 }
 
 /* ── Bottom gradient transition ── */

@@ -8,6 +8,7 @@ const products: {
   description: string;
   badge: string;
   badgeType: string;
+  productType: "SaaS" | "A medida";
   featured: boolean;
   cta: { text: string; href: string; variant: 'primary' | 'secondary' } | null;
 }[] = [
@@ -18,6 +19,7 @@ const products: {
       "Desarrollamos tu sitio web con inteligencia artificial integrada. Desde chatbots que atienden a tus clientes hasta automatizaciones que trabajan mientras dormís.",
     badge: "DISPONIBLE",
     badgeType: "available",
+    productType: "A medida",
     featured: false,
     cta: { text: "[ CONSULTAR ]", href: "#contacto", variant: "secondary" },
   },
@@ -26,9 +28,10 @@ const products: {
     name: "Agente de Ads",
     description:
       "Tu copiloto de campañas publicitarias. Analiza performance, detecta oportunidades y ofrece recomendaciones accionables — todo en lenguaje natural. Próximamente podrá ejecutar cambios en tus campañas con tu autorización.",
-    badge: "EN DESARROLLO",
-    badgeType: "dev",
-    featured: true,
+    badge: "DISPONIBLE",
+    badgeType: "available",
+    productType: "SaaS",
+    featured: false,
     cta: { text: "[ VER MÁS ]", href: "/agente-ads", variant: "primary" },
   },
   {
@@ -38,6 +41,7 @@ const products: {
       "Monitoreo automático de novedades de AFIP. Detecta cada cambio y te indica exactamente a cuáles de tus clientes aplica — para que nunca te tome por sorpresa.",
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
+    productType: "SaaS",
     featured: false,
     cta: null,
   },
@@ -48,6 +52,7 @@ const products: {
       "Un agente que responde por WhatsApp en tu nombre, respetando el historial y el tono de cada conversación con tus clientes. Disponible como módulo integrado a otros agentes o como producto independiente.",
     badge: "PRÓXIMAMENTE",
     badgeType: "soon",
+    productType: "SaaS",
     featured: false,
     cta: null,
   },
@@ -61,15 +66,11 @@ export default function Productos() {
           // PRODUCTOS
         </p>
         <h2 className={styles.title} data-animate data-animate-delay="1">
-          [ SOLUCIONES DE IA ]
+          [ NUESTROS PRODUCTOS ]
         </h2>
         <p className={styles.subtitle} data-animate data-animate-delay="2">
-          Herramientas de IA diseñadas para quienes quieren hacer más
-          con menos esfuerzo.
-        </p>
-
-        <p className={styles.positioningPhrase} data-animate data-animate-delay="3">
-          Usar inteligencia artificial ya es un requisito esencial, no una ventaja.
+          Algunas de las soluciones que ya desarrollamos.
+          Cada una nació de un problema concreto.
         </p>
 
         <div className={styles.grid}>
@@ -82,6 +83,17 @@ export default function Productos() {
             >
               {/* Top-left corner bracket accent */}
               <span className={styles.cardBracket} aria-hidden="true" />
+
+              {/* Product type tag */}
+              <span
+                className={`${styles.typeTag} ${
+                  product.productType === "SaaS"
+                    ? styles.typeTag_saas
+                    : styles.typeTag_medida
+                }`}
+              >
+                {product.productType}
+              </span>
 
               <div className={styles.cardIconWrap} aria-hidden="true">
                 <product.Icon size={22} className={styles.cardIconSvg} />

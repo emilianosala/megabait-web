@@ -46,11 +46,11 @@ export default function Hero() {
         </h1>
 
         <div className={styles.ctas} data-animate data-animate-delay="2">
-          <a href="#productos" className={styles.btnPrimary}>
-            [ VER PRODUCTOS ]
-          </a>
-          <a href="#contacto" className={styles.btnSecondary}>
+          <a href="#contacto" className={styles.btnPrimary}>
             [ HABLAR CON EL EQUIPO ]
+          </a>
+          <a href="#productos" className={styles.btnSecondary}>
+            [ VER PRODUCTOS ]
           </a>
         </div>
       </div>

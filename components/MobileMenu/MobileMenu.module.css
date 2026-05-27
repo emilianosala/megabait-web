@@ -1,0 +1,233 @@
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, .45); }
+  50%       { box-shadow: 0 0 0 6px rgba(57, 255, 20, 0); }
+}
+
+/* ── Container ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #0a0a0a;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 150ms ease-out, visibility 0s linear 150ms;
+}
+
+@media (min-width: 769px) {
+  .overlay {
+    display: none;
+  }
+}
+
+.overlayOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 200ms ease-out;
+}
+
+/* ── Background decorations ── */
+.dotGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(57, 255, 20, .06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.edgeGlow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(57, 255, 20, .18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Stagger animation — fast out, delayed in ── */
+.topBar,
+.badgeWrap,
+.nav,
+.footerBlock {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 150ms ease-out, transform 150ms ease-out;
+}
+
+.overlayOpen .topBar {
+  opacity: 1;
+  transform: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition-delay: 0ms;
+}
+
+.overlayOpen .badgeWrap {
+  opacity: 1;
+  transform: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition-delay: 40ms;
+}
+
+.overlayOpen .nav {
+  opacity: 1;
+  transform: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition-delay: 80ms;
+}
+
+.overlayOpen .footerBlock {
+  opacity: 1;
+  transform: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  transition-delay: 120ms;
+}
+
+/* ── Top bar ── */
+.topBar {
+  padding: 52px 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.closeBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .15);
+}
+
+/* ── Badge ── */
+.badgeWrap {
+  padding: 32px 28px 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(57, 255, 20, .07);
+  border: 1px solid rgba(57, 255, 20, .22);
+  border-radius: 999px;
+  padding: 5px 14px;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #39FF14;
+  box-shadow: 0 0 8px #39FF14;
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #39FF14;
+  letter-spacing: .1em;
+}
+
+/* ── Nav ── */
+.nav {
+  padding: 28px 28px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .05);
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navItem:hover {
+  color: #39FF14;
+}
+
+.navNum {
+  font-family: var(--font-press-start), monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, .25);
+  letter-spacing: .05em;
+  transition: color 0.2s ease;
+}
+
+.navItem:hover .navNum {
+  color: #39FF14;
+}
+
+.navLabel {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+/* ── Footer block ── */
+.footerBlock {
+  padding: 28px 28px 0;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.socialBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.socialBtn:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .15);
+  color: #ffffff;
+}
+
+.footerTagline {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, .35);
+  line-height: 1.6;
+  font-style: italic;
+}

@@ -11,20 +11,6 @@ export default function Footer() {
             <LogoGlow variant="footer" />
           </a>
 
-          <nav className={styles.links}>
-            <a href="#productos" className={styles.link}>
-              Productos
-            </a>
-            <a href="#contacto" className={styles.link}>
-              Contacto
-            </a>
-          </nav>
-        </div>
-
-        <div className={styles.bottom}>
-          <p className={styles.copy}>
-            © 2026 Megabait. Todos los derechos reservados.
-          </p>
           <nav className={styles.legalLinks}>
             <Link href="/privacy" className={styles.legalLink}>
               Privacidad
@@ -33,6 +19,12 @@ export default function Footer() {
               Términos
             </Link>
           </nav>
+        </div>
+
+        <div className={styles.bottom}>
+          <p className={styles.copy}>
+            © 2026 Megabait. Todos los derechos reservados.
+          </p>
           <p className={styles.tagline}>IA aplicada. Resultados reales.</p>
         </div>
       </div>
